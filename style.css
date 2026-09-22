@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
-  background: #947706;
-  color: #222;
+  background: #c87c74;
+  color: #59001c42;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -15,3 +15,138 @@ body {
   margin: 0 auto;
   padding: 32px 40px;
 }
+
+main {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(420px, 1.6fr);
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  gap: clamp(32px, 5vw, 80px);
+}
+
+.sidebar {
+  width: 90%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #a855f7; /* accent */
+}
+
+.content p {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+}
+
+#interests {
+  margin-top: 32px;
+  width: 100%;
+}
+
+#interests h3 {
+  margin: 0 0 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #f87171;
+}
+
+#interests ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#interests li {
+  color: #e20808;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  background: #0c0b0b;
+  border: 1px solid #cb28b2;
+  border-radius: 100px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+  cursor: default;
+}
+
+#interests li:hover {
+  background: #20013a;
+  color: #1a1a1a;
+  border-color: rgb(44, 8, 90);
+  transform: translateY(-2px);
+}
+
+.sidebar-img {
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  filter: grayscale(100%);
+  box-shadow: 0 8px 30px rgba(6, 3, 3, 0.12);
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.sidebar-img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+  padding: 16px 24px;
+  background: #343100;
+  border: 1px solid #1c0202;
+  border-radius: 12px;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #220202;
+}
+
+#nav-ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-li a {
+  color: #666:#0c0b0b;
