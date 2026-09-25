@@ -1,15 +1,211 @@
 <!DOCTYPE html>
 <html>
   <head>
- <title>My Awesome Website</title>
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <title>My Awesome Website</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(160deg, #2b0a3d 0%, #5c1a5c 45%, #c87c74 100%);
+        color: #f5e9ff;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      #all-contents {
+        max-width: 1500px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 32px 40px;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) minmax(420px, 1.6fr);
+        align-items: center;
+        min-height: calc(100vh - 160px);
+        gap: clamp(32px, 5vw, 80px);
+      }
+
+      .sidebar {
+        width: 90%;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(4rem, 10vw, 7rem);
+        line-height: 0.9;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .content p {
+        margin: 0;
+        color: #f5f5f5;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        line-height: 1.4;
+      }
+
+      .founder-note {
+        max-width: 46ch;
+        color: #e9d8ff;
+        opacity: 0.85;
+      }
+
+      #interests {
+        margin-top: 32px;
+        width: 100%;
+      }
+
+      #interests h3 {
+        margin: 0 0 12px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #f3d9ff;
+      }
+
+      #interests ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      #interests li {
+        color: #ffe1f5;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 10px 20px;
+        background: #7c009f;
+        border: 1px solid #cb28b2;
+        border-radius: 100px;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease;
+        cursor: default;
+      }
+
+      #interests li:hover {
+        background: #ec4899;
+        color: #2b0a3d;
+        border-color: #f5e9ff;
+        transform: translateY(-2px);
+      }
+
+      .sidebar-img {
+        width: 100%;
+        max-width: 760px;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        display: block;
+        border-radius: 16px;
+        filter: grayscale(100%);
+        box-shadow: 0 8px 30px rgba(57, 1, 74, 0.627);
+        transition:
+          filter 0.4s ease,
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+
+      .sidebar-img:hover {
+        filter: grayscale(0%);
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(75, 2, 81, 0.387);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+        padding: 16px 24px;
+        background: #2100343b;
+        border: 1px solid #70037592;
+        border-radius: 12px;
+      }
+
+      nav h1 {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #d9a9ff;
+      }
+
+      #nav-ul {
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-li a {
+        color: #e5d4ff;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .nav-li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+      }
+
+      .nav-li a.active {
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        color: #ffffff;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .sidebar {
+          width: 100%;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="all-contents">
-     <nav>
+      <nav>
         <h1>the life of a lazy person</h1>
         <ul id="nav-ul">
-          <li class="nav-li"><a href="index.html">Home</a></li>
+          <li class="nav-li"><a href="index.html" class="active">Home</a></li>
           <li class="nav-li"><a href="portfolio.html">Portfolio</a></li>
         </ul>
       </nav>
@@ -17,26 +213,29 @@
       <main>
         <div class="sidebar">
           <img
+            class="sidebar-img"
             src="https://static8.depositphotos.com/1292351/803/v/450/depositphotos_8033172-stock-illustration-cartoon-teen-relaxing-on-the.jpg"
-            alt="15,861,631 Lazy young people Stock Illustrations | DepositPhotos"
+            alt="Cartoon of a relaxed teen lying down"
           />
         </div>
 
         <div class="content">
           <h2>The Life of a Lazy Person</h2>
-          <p>best game in da world</p>
-          
-          <div id="interests">
-            <h3>shout to the realist😭</h3>
-            <ul>
-              <li>eating</li>
-              <li>sleeping</li>
-              <li>chillin</li>
-            </div>
-            </ul>
-        </div>
+          <p>Best game in the world.</p>
 
-        <p>to da best game in new orleans was founded in the mid 2026 to rely a message to the lazy people.</p>
+          <div id="interests">
+            <h3>Shout to the realists 😭</h3>
+            <ul>
+              <li>Eating</li>
+              <li>Sleeping</li>
+              <li>Chillin'</li>
+            </ul>
+          </div>
+
+          <p class="founder-note">
+            Founded in New Orleans in mid-2026 to spread a message to the lazy people.
+          </p>
+        </div>
       </main>
     </div>
   </body>

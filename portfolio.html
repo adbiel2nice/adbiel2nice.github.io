@@ -1,8 +1,174 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>My Awesome Website</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(160deg, #2b0a3d 0%, #5c1a5c 45%, #c87c74 100%);
+        color: #f5e9ff;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      #all-contents {
+        max-width: 1500px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 32px 40px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        min-height: calc(100vh - 160px);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(3rem, 7vw, 5rem);
+        line-height: 0.95;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .intro {
+        max-width: 60ch;
+        color: #f5e9ff;
+        opacity: 0.85;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .section-label {
+        margin: 0 0 16px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #d9a9ff;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+
+      .project-card {
+        background: #2100343b;
+        border: 1px solid #70037592;
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-decoration: none;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(75, 2, 81, 0.387);
+        border-color: #ec4899;
+      }
+
+      .project-card h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .project-card p {
+        margin: 0;
+        color: #e9d8ff;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .tag {
+        color: #ffe1f5;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 6px 14px;
+        background: #7c009f;
+        border: 1px solid #cb28b2;
+        border-radius: 100px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+        padding: 16px 24px;
+        background: #2100343b;
+        border: 1px solid #70037592;
+        border-radius: 12px;
+      }
+
+      nav h1 {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #d9a9ff;
+      }
+
+      #nav-ul {
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-li a {
+        color: #e5d4ff;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .nav-li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+      }
+
+      .nav-li a.active {
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        color: #ffffff;
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="all-contents">
@@ -10,32 +176,45 @@
         <h1>the life of a lazy person</h1>
         <ul id="nav-ul">
           <li class="nav-li"><a href="index.html">Home</a></li>
-          <li class="nav-li"><a href="portfolio.html">Portfolio</a></li>
+          <li class="nav-li"><a href="portfolio.html" class="active">Portfolio</a></li>
         </ul>
       </nav>
 
       <main>
-        <div class="content">
-          <h1>Portfolio</h1>
-          <h3>FSD Projects</h3>
-          <ul id="portfolio">
-            <li>
-              <a href="fsd-projects/platformer/">Platformer: A cannon-dodging adventure game for Halleb0t</a>
-            </li>
-            <li>
-              <a href="fsd-projects/bouncing-box/">Bouncing Box: A fun introduction to web game development</a>
-            </li>
-            <li>
-              <a href="fsd-projects/circularity/">Circularity: A poetic motion experiment with circles</a>
-            </li>
-            <li>
-              <a href="fsd-projects/runtime/">Runtime : Fearless HalleBot goes on a side-scrolling adventure!</a>
-            </li>
-          </ul>
-
-          <!-- ASD Projects will go here -->
-
+        <div>
+          <h2>Portfolio</h2>
+          <p class="intro">
+            A few things I've made while taking it easy. More lazy-person energy, less effort.
+          </p>
         </div>
+
+        <div>
+          <h3 class="section-label">FSD Projects</h3>
+          <div class="project-grid">
+            <a class="project-card" href="fsd-projects/platformer/">
+              <h3>Platformer</h3>
+              <p>A cannon-dodging adventure game for Halleb0t.</p>
+            </a>
+
+            <a class="project-card" href="fsd-projects/bouncing-box/">
+              <h3>Bouncing Box</h3>
+              <p>A fun introduction to web game development.</p>
+            </a>
+
+            <a class="project-card" href="fsd-projects/circularity/">
+              <h3>Circularity</h3>
+              <p>A poetic motion experiment with circles.</p>
+            </a>
+
+            <a class="project-card" href="fsd-projects/runtime/">
+              <h3>Runtime</h3>
+              <p>Fearless HalleBot goes on a side-scrolling adventure!</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- ASD Projects will go here -->
+        
       </main>
     </div>
   </body>
