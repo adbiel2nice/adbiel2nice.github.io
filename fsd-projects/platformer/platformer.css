@@ -8,7 +8,11 @@ body {
 }
 
 canvas {
-  background-color: lightblue;
+background-image: url(https://www.pngitem.com/pimgs/m/159-1598340_clip-art-fat-man-eating-donuts-fat-man.png);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+
   margin: 20px;
   border-radius: 15px;
   border: 5px solid rgba(118, 0, 233, 0.375);

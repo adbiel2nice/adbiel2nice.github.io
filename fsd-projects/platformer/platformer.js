@@ -28,22 +28,22 @@ $(function () {
     // toggleGrid();
 
     // TODO 2 - Create Platforms
-    // Neon sunset gradient climb — cool colors rising to hot colors
-    createPlatform(80, 620, 180, 20, "#1E1B4B");     // BED — deep indigo
-    createPlatform(360, 570, 180, 20, "#4C1D95");    // floor pillow — dark purple
-    createPlatform(680, 520, 180, 20, "#7C3AED");    // snack shelf — royal purple
-    createPlatform(1000, 460, 180, 20, "#C026D3");   // stepping stool — magenta
-    createPlatform(720, 380, 180, 20, "#EC4899");    // bean bag — hot pink
-    createPlatform(400, 300, 180, 20, "#F43F5E");    // side table — rose red
-    createPlatform(120, 220, 180, 20, "#F97316");    // window ledge — orange
-    createPlatform(480, 160, 200, 20, "#FACC15");    // COUCH — golden yellow (finish)
+    // Alternating red and yellow, spaced out a bit more
+    createPlatform(60, 630, 180, 20, "red");        // BED
+    createPlatform(370, 575, 180, 20, "yellow");    // floor pillow
+    createPlatform(700, 520, 180, 20, "red");       // snack shelf
+    createPlatform(1020, 455, 180, 20, "yellow");   // stepping stool
+    createPlatform(720, 375, 180, 20, "red");       // bean bag
+    createPlatform(390, 295, 180, 20, "yellow");    // side table
+    createPlatform(100, 215, 180, 20, "red");       // window ledge
+    createPlatform(500, 145, 200, 20, "yellow");    // COUCH (finish)
 
-    // TODO 3 - Create Collectables
-    createCollectable("diamond", 420, 520);
-    createCollectable("steve", 1040, 400, 0.5, 0.7);
-    createCollectable("max", 460, 240);
-    createCollectable("kennedi", 200, 160, 0, 0);
-    createCollectable("database", 560, 100);
+    // TODO 3 - Create Collectables (nudged to sit above the moved platforms)
+    createCollectable("diamond", 430, 525);
+    createCollectable("steve", 1060, 395, 0.5, 0.7);
+    createCollectable("max", 450, 235);
+    createCollectable("kennedi", 180, 155, 0, 0);
+    createCollectable("database", 580, 85);
 
     // TODO 4 - Create Cannons — five of them, all four sides
     createCannon("bottom", 500, 2200);   // floor lob
