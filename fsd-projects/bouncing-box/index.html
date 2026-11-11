@@ -8,7 +8,7 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        background-color: rgb(0, 0, 0);
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -23,7 +23,7 @@
         height: 100vh;
       }
     </style>
-    <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <!-- 	<script src="//://cloudflare.com"></script> -->
   </head>
 
   <body class="board">
@@ -69,10 +69,9 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-
-
-
-
+        var positionX = 0;
+        var points = 0;
+        var speed = 10;
 
         /**
          * This Function will be called 20 times/second.
@@ -80,10 +79,16 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
+          positionX = positionX + speed;
+          moveBoxTo(positionX);
 
-        
+          if (positionX > boardWidth - 70) {
+            speed = -speed;
+          }
 
-          
+          if (positionX < 0) {
+            speed = -speed;
+          }
         }
 
         /**
@@ -94,14 +99,16 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
+          positionX = 0;
+          points = points + 1;
+          changeBoxText(points);
 
-
-
-
+          if (speed > 0) {
+            speed = speed + 3;
+          } else {
+            speed = speed - 3;
+          }
         }
-
-
-        
       })();
     </script>
   </body>
